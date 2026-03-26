@@ -86,6 +86,13 @@ function App() {
   const [error, setError] = useState('')
   const [copyLabel, setCopyLabel] = useState('Copy output')
 
+  function clearAll() {
+    setInput('')
+    setOutput('')
+    setError('')
+    setCopyLabel('Copy output')
+  }
+
   function convert(nextInput = input) {
     try {
       const arrayified = parseObjectStream(nextInput)
@@ -146,6 +153,13 @@ function App() {
             }}
           >
             Load sample
+          </button>
+          <button
+            type="button"
+            className="button-secondary"
+            onClick={clearAll}
+          >
+            Clear
           </button>
           <button
             type="button"
